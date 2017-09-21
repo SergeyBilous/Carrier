@@ -13,15 +13,10 @@ public class UserInfoCallBack implements AsyncCallback<UserInfo> {
 
     @Override
     public void onSuccess(UserInfo userInfo) {
-        if (userInfo != null) {
-            Globals.userInfo = userInfo;
-            if (Globals.userInfo.getUserName() == "Serge")
-                Globals.initScreen();
-        } else {
-            Window.alert("Not logged in");
-        }
 
-    }
+        Globals.userInfo = userInfo;
+        Globals.initScreen();
+        Window.alert("Greetings, "+Globals.userInfo.getUserName());}
 
     public UserInfoCallBack() {
     }
